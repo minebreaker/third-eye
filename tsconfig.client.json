@@ -2,8 +2,7 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "module": "esnext",
-        "target": "esnext",
-        "jsx": "react"
+        "target": "esnext"
     },
     "exclude": [
         "src/server"

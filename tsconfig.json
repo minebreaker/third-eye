@@ -4,6 +4,7 @@
         "declaration": false,
         "inlineSourceMap": true,
         "outDir": "build/sources",
+        "jsx": "react",
         "newLine": "LF",
         "skipLibCheck": true,
         "strict": true,
