@@ -2,7 +2,8 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "module": "CommonJS",
-        "target": "ES6"
+        "target": "ES6",
+        "rootDir": "./"
     },
     "exclude": [
         "src/client",

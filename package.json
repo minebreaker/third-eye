@@ -8,7 +8,7 @@
         "build:production": "export NODE_ENV=production && npm run clean && npm run build",
         "assemble": "npm run compile && npm run bundle && npm run copy",
         "run": "electron build/out/server/index.js",
-        "run:refresh": "npm run build && npm run run",
+        "run:refresh": "npm run assemble && npm run run",
         "compile": "npm run compileClient && npm run compileServer",
         "compileClient": "tsc -p tsconfig.client.json",
         "compileServer": "tsc -p tsconfig.server.json",

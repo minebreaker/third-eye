@@ -1,7 +1,7 @@
 import electron = require( "electron" )
 
 
-const { app, BrowserWindow } = electron
+const { app, BrowserWindow, Menu } = electron
 
 function createWindow() {
     const win = new BrowserWindow( {
@@ -15,6 +15,19 @@ function createWindow() {
     if ( process.env.NODE_ENV !== "production" ) {
         win.webContents.openDevTools()
     }
+
+    const menu = Menu.buildFromTemplate( [
+        {
+            label: "File",
+            submenu: [ { role: "quit" } ]
+        },
+        {
+            label: "Help",
+            submenu: [ { label: "DevTool", click: () => win.webContents.openDevTools() } ]
+        }
+    ] )
+    win.setMenu( menu )
+    Menu.setApplicationMenu( menu )
 }
 
 app.whenReady().then( createWindow )
