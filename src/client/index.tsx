@@ -1,10 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import { Application } from "./application"
 
 
 document.addEventListener( "DOMContentLoaded", () => {
     ReactDOM.render(
-        <h1>hello, world</h1>,
+        <Application />,
         document.getElementById( "app" )
     )
 } )

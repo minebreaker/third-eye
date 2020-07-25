@@ -7,7 +7,8 @@ function createWindow() {
     const win = new BrowserWindow( {
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        title: "Third Eye"
     } )
 
     win.loadFile( "../client/index.html" )
@@ -16,18 +17,7 @@ function createWindow() {
         win.webContents.openDevTools()
     }
 
-    const menu = Menu.buildFromTemplate( [
-        {
-            label: "File",
-            submenu: [ { role: "quit" } ]
-        },
-        {
-            label: "Help",
-            submenu: [ { label: "DevTool", click: () => win.webContents.openDevTools() } ]
-        }
-    ] )
-    win.setMenu( menu )
-    Menu.setApplicationMenu( menu )
+    Menu.setApplicationMenu( null )
 }
 
 app.whenReady().then( createWindow )
