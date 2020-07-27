@@ -35,7 +35,8 @@ const QuickAccessButton: React.FC<ButtonProps> = props => {
 const useStyles = createUseStyles( {
     wrapper: {
         width: "180px",
-        borderRight: "solid 1px"
+        borderRight: "solid 1px",
+        padding: "0.4em"
     },
     button: {
         width: "100%",

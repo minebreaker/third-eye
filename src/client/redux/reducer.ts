@@ -1,5 +1,7 @@
-import { combineReducers } from "redux"
-import { currentPathReducer } from "../actions/currentPath"
+import { Reducer } from "redux"
+import { reduceCurrentPath } from "../actions/currentPath"
+import { reduceInitialize } from "../actions/initialize"
+import { Actions, CHANGE_CURRENT_PATH, INITIALIZE } from "./actions"
 
 
 export type AppState = {
@@ -7,14 +9,15 @@ export type AppState = {
     root: Directory
 }
 
-export const rootReducer = combineReducers<AppState>( {
-    currentPath: currentPathReducer,
-    // FIXME
-    root: ( state = {
-        name: "root", files: [
-            { name: "C", files: [] },
-            { name: "D", files: [] },
-            { name: "E", files: [] }
-        ]
-    } ) => state
-} )
+export const rootReducer: Reducer<AppState, Actions> = ( state, action ) => {
+    if ( !state ) {
+        return reduceInitialize()
+    }
+
+    switch ( action.type ) {
+        case INITIALIZE:
+            return reduceInitialize( state, action )
+        case CHANGE_CURRENT_PATH:
+            return reduceCurrentPath( state, action )
+    }
+}

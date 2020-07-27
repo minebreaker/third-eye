@@ -1,5 +1,6 @@
-import { Reducer } from "redux"
 import { CHANGE_CURRENT_PATH } from "../redux/actions"
+import { AppState } from "../redux/reducer"
+import { TruthyReducer } from "../redux/utils"
 
 
 export type ChangeCurrentPathAction = {
@@ -10,11 +11,6 @@ export type ChangeCurrentPathAction = {
 export const changeCurrentPath: ( path: string ) => ChangeCurrentPathAction = newPath =>
     ({ type: CHANGE_CURRENT_PATH, newPath })
 
-export const currentPathReducer: Reducer<string, ChangeCurrentPathAction> = ( state = "", action ) => {
-    switch ( action.type ) {
-        case CHANGE_CURRENT_PATH:
-            return action.newPath
-        default:
-            return state
-    }
+export const reduceCurrentPath: TruthyReducer<AppState, ChangeCurrentPathAction> = ( state, action ) => {
+    return { ...state, currentPath: action.newPath }
 }
