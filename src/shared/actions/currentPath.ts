@@ -8,9 +8,10 @@ export type ChangeCurrentPathAction = {
     newPath: string
 }
 
-export const changeCurrentPath: ( path: string ) => ChangeCurrentPathAction = newPath =>
+export const changeCurrentPathAction: ( path: string ) => ChangeCurrentPathAction = newPath =>
     ({ type: CHANGE_CURRENT_PATH, newPath })
 
 export const reduceCurrentPath: TruthyReducer<AppState, ChangeCurrentPathAction> = ( state, action ) => {
     return { ...state, currentPath: action.newPath }
 }
+

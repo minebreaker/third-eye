@@ -1,7 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import { useSelector } from "react-redux"
-import { AppState } from "../redux/reducer"
+import { AppState } from "../../shared/redux/reducer"
 import { NavTreePane } from "./navTreePane"
 
 

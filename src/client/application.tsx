@@ -1,11 +1,11 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import { Provider as StoreProvider } from "react-redux"
+import { store } from "../shared/redux/store"
 import { NavTree } from "./components/navTree"
 import { QuickAccess } from "./components/quickAccess"
 import { Toolbar } from "./components/toolbar"
-import { ConfigProvider } from "./config/configProvider"
-import { store } from "./redux/store"
+import { EventBus } from "./electron/eventBus"
 
 
 const useStyles = createUseStyles( () => ({
@@ -34,7 +34,7 @@ export const Application = () => {
 
     return (
         <StoreProvider store={store}>
-            <ConfigProvider>
+            <EventBus>
                 <div className={classes.root}>
                     <Toolbar />
                     <div className={classes.mainPane}>
@@ -44,7 +44,7 @@ export const Application = () => {
                         </div>
                     </div>
                 </div>
-            </ConfigProvider>
+            </EventBus>
         </StoreProvider>
     )
 }
