@@ -1,6 +1,6 @@
-import { CHANGE_CURRENT_PATH } from "../redux/actions"
-import { AppState } from "../redux/reducer"
-import { TruthyReducer } from "../redux/utils"
+import { CHANGE_CURRENT_PATH } from "../actions"
+import { AppState } from "../reducer"
+import { TruthyReducer } from "../utils"
 
 
 export type ChangeCurrentPathAction = {

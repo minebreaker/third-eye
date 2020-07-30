@@ -1,5 +1,5 @@
-import { ChangeCurrentPathAction } from "../actions/currentPath"
-import { InitializeAction } from "../actions/initialize"
+import { ChangeCurrentPathAction } from "./actions/currentPath"
+import { InitializeAction } from "./actions/initialize"
 
 
 export type Actions =

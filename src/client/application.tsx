@@ -1,11 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import { Provider as StoreProvider } from "react-redux"
-import { store } from "../shared/redux/store"
-import { NavTree } from "./components/navTree"
-import { QuickAccess } from "./components/quickAccess"
-import { Toolbar } from "./components/toolbar"
-import { EventBus } from "./electron/eventBus"
+import { store } from "./redux/store"
 
 
 const useStyles = createUseStyles( () => ({
@@ -18,13 +14,6 @@ const useStyles = createUseStyles( () => ({
     },
     root: {
         height: "100vh"
-    },
-    mainPane: {
-        height: "100%",
-        display: "flex"
-    },
-    navTree: {
-        flexGrow: 2
     }
 }) )
 
@@ -34,17 +23,7 @@ export const Application = () => {
 
     return (
         <StoreProvider store={store}>
-            <EventBus>
-                <div className={classes.root}>
-                    <Toolbar />
-                    <div className={classes.mainPane}>
-                        <QuickAccess />
-                        <div className={classes.navTree}>
-                            <NavTree />
-                        </div>
-                    </div>
-                </div>
-            </EventBus>
+            <div className={classes.root} />
         </StoreProvider>
     )
 }

@@ -1,10 +1,8 @@
-const ipcMain = require( "electron" ).ipcMain
+import { ipcMain } from "electron"
+import { INITIALIZE, UPDATE_DIRECTORY } from "../shared/eventBusActions/actions"
 
-
-const UPDATE_DIRECTORY = "updateDirectory"
 
 export const initializeEventBus = () => {
-    ipcMain.on( UPDATE_DIRECTORY, ( _event, _arg ) => {
-        // TODO
-    } )
+    ipcMain.on( INITIALIZE, initialize )
+    ipcMain.on( UPDATE_DIRECTORY, updateDirectory )
 }

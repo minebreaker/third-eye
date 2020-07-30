@@ -1,7 +1,7 @@
 import { Reducer } from "redux"
 import { Config } from "../entities/config"
-import { reduceCurrentPath } from "../actions/currentPath"
-import { reduceInitialize } from "../actions/initialize"
+import { reduceCurrentPath } from "./actions/currentPath"
+import { reduceInitialize } from "./actions/initialize"
 import { Actions, CHANGE_CURRENT_PATH, INITIALIZE } from "./actions"
 
 
