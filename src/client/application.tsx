@@ -1,6 +1,7 @@
 import React from "react"
 import { createUseStyles } from "react-jss"
 import { Provider as StoreProvider } from "react-redux"
+import { getActivity } from "./activities/activities"
 import { store } from "./redux/store"
 
 
@@ -21,9 +22,13 @@ export const Application = () => {
 
     const classes = useStyles()
 
+    const Activity = getActivity( store.getState()?.activity )
+
     return (
         <StoreProvider store={store}>
-            <div className={classes.root} />
+            <div className={classes.root}>
+                <Activity />
+            </div>
         </StoreProvider>
     )
 }

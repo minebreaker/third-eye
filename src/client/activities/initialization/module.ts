@@ -1,8 +1,9 @@
 import { useEffect } from "react"
 import { useStore } from "react-redux"
-import { initializeAction } from "../../redux/actions/initialize"
 import { INITIALIZE, INITIALIZED } from "../../../shared/eventBusActions/actions"
+import { initializeAction } from "../../redux/actions/initialize"
 import { AppState } from "../../redux/reducer"
+import { MAIN_ACTIVITY } from "../activities"
 
 
 const ipcRenderer = window.require( "electron" ).ipcRenderer
@@ -16,6 +17,7 @@ export const useInitialize = () => {
         ipcRenderer.send( INITIALIZE )
         ipcRenderer.on( INITIALIZED, () => {
             store.dispatch( initializeAction( {
+                activity: MAIN_ACTIVITY,
                 currentPath: "",
                 root: {
                     name: "", files: [

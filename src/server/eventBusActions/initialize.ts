@@ -9,5 +9,7 @@ export const initialize = ( _event: Electron.IpcMainEvent, _arg: InitializeArg )
     // Determine current path
     // Request directory update
 
-    ipcMain.emit( INITIALIZED )
+    ipcMain
+    INITIALIZED
+    //ipcMain.emit( INITIALIZED )
 }

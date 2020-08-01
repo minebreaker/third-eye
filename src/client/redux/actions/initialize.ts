@@ -1,5 +1,5 @@
 import { INITIALIZE } from "../actions"
-import { AppState } from "../reducer"
+import { AppState, defaultState } from "../reducer"
 
 
 export type InitializeAction = {
@@ -11,7 +11,7 @@ export const initializeAction: ( state: AppState ) => InitializeAction = ( state
     ({ type: INITIALIZE, state })
 
 export const reduceInitialize: ( state?: AppState, action?: InitializeAction ) => AppState = (
-    state,
+    _state,
     action
 ) => {
 
@@ -19,5 +19,5 @@ export const reduceInitialize: ( state?: AppState, action?: InitializeAction ) =
         return action.state
     }
 
-    return state!
+    return defaultState
 }
