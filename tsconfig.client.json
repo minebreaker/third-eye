@@ -5,6 +5,7 @@
         "target": "esnext"
     },
     "exclude": [
+        "src/index.ts",
         "src/server"
     ]
 }

@@ -1,11 +1,11 @@
 import electron = require( "electron" )
-import eventBus = require("./eventBus")
+import * as eventBus from "./eventBus"
 
 
 const { app, BrowserWindow, Menu } = electron
 
 
-function main() {
+export function main() {
 
     app.whenReady().then( async () => {
         await eventBus.initializeEventBus()
@@ -33,7 +33,7 @@ async function createWindow() {
         title: "Third Eye"
     } )
 
-    await win.loadFile( "../client/index.html" )
+    await win.loadFile( "./client/index.html" )
 
     if ( process.env.NODE_ENV !== "production" ) {
         win.webContents.openDevTools()
@@ -41,5 +41,3 @@ async function createWindow() {
 
     Menu.setApplicationMenu( null )
 }
-
-main()
