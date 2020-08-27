@@ -14,8 +14,10 @@ export const useInitialize = () => {
     const store = useStore<AppState>()
 
     useEffect( () => {
+        console.log("initialize")
         ipcRenderer.send( INITIALIZE )
         ipcRenderer.on( INITIALIZED, () => {
+            console.log("initialized")
             store.dispatch( initializeAction( {
                 activity: MAIN_ACTIVITY,
                 currentPath: "",

@@ -8,7 +8,7 @@ const { app, BrowserWindow, Menu } = electron
 export function main() {
 
     app.whenReady().then( async () => {
-        await eventBus.initializeEventBus()
+        eventBus.initializeEventBus()
         await createWindow()
     } )
 
