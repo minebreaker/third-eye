@@ -26,7 +26,7 @@
     "license": "MIT",
     "dependencies": {
         "lodash": "^4.17.16",
-        "luxon": "^1.24.1",
+        "luxon": "^2.5.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-jss": "^10.3.0",
